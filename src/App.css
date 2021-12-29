@@ -2,37 +2,42 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Jumbotron {
+  background-color: rgb(204, 228, 248);
+  padding: 40px;
+  background-image: url('../public/img/front.jpg');
+  /* Photo by https://unsplash.com/@jordannix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jordan Nix</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+   */
+  background-size: cover;
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Jumbotron h1 {
+  font-weight: 900;
+  color: aliceblue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Jumbotron p {
+ margin-top: 10px;
+ color: whitesmoke;
+ font-weight: 600;
+}
+
+.btn-info {
+  background-color: rgb(109, 193, 196);
   color: white;
+  border-color: white;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-brand {
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  margin: 20px auto;
+}
+
+.col-md-4 img {
+  height: 500px;
 }
