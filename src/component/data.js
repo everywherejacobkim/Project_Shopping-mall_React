@@ -23,4 +23,4 @@ let itemArray = [
       
 ]
 
-export default itemArray
+export default itemArray;

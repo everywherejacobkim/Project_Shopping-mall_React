@@ -1,10 +1,11 @@
 /* eslint-disable */
 
 import './App.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
-import itemArray from './data';
+import itemArray from './component/data';
 import {Link, Route, Switch} from 'react-router-dom';
+import Detail from './component/Detail';
 
 function App() {
 
@@ -20,8 +21,8 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/detail">Detail</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -34,17 +35,7 @@ function App() {
       </Container>
     </Navbar>
 
-    {/* <div className="Jumbotron">
-        <h1>
-          50% End of Year Sale
-        </h1>
-        <p>
-          Enjoy our end of year extra 50% off holiday sale. Online only.
-          Exclusions/terms may apply when you check out.
-        </p>
-        <Button variant="info">Explore</Button>{' '}
-    </div> */}
-
+<Switch>
     <Route exact path="/">
       <div className="Jumbotron">
           <h1>
@@ -92,22 +83,15 @@ function App() {
     </Route>
 
     <Route path="/detail">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-          </div>
-          <div className="col-md-6 mt-4">
-            <h4 className="pt-5">상품명</h4>
-            <p>상품설명</p>
-            <p>120000원</p>
-            <button className="btn btn-danger">주문하기</button> 
-          </div>
-        </div>
-      </div> 
+      <Detail />
     </Route>
 
+    <Route path="/:id">
+      <div>Constructing..</div>
+    </Route>    
     
+</Switch>
+
   </div>
   );
 }
@@ -121,6 +105,8 @@ function Card(props) {
   </div>
   )
 }
+
+
 
 
 export default App;
