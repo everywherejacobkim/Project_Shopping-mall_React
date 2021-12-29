@@ -1,7 +1,16 @@
+/* eslint-disable */
+
 import './App.css';
+import { useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
+import itemArray from './data';
+import { map } from 'jquery';
 
 function App() {
+
+  let [item, itemEdit] = useState(itemArray);
+
+
   return (
   <div className="App">
 
@@ -38,33 +47,51 @@ function App() {
 
     <div className='container'>
       <div className='row'>
+        {
+          item.map((a,i)=>{
+            return <Card item={item[i]} i={i} key={i}/>
+          })
+        }
 
-        <div className='col-md-4'>
+        {/* <Card item={item[0]}/>
+        <Card item={item[1]}/>
+        <Card item={item[2]}/> */}
+        
+        {/* <div className='col-md-4'>
           <img src='img/jacket.jpg' width='100%'/>
-          <h4>Item Name</h4>
-          <p>Desc & Price</p>
+          <h4>{item[0].title}</h4>
+          <p>{item[0].content} & {item[0].price}</p>
         </div>
 
         <div className='col-md-4'>
           <img src='img/bomber.jpg' width='100%'/>
-          <h4>Item Name</h4>
-          <p>Desc & Price</p>
+          <h4>{item[1].title}</h4>
+          <p>{item[1].content} & {item[1].price}</p>
         </div>
 
         <div className='col-md-4'>
           <img src='img/shoes.jpg' width='100%'/>
-          <h4>Item Name</h4>
-          <p>Desc & Price</p>
-        </div>
+          <h4>{item[2].title}</h4>
+          <p>{item[2].content} & {item[2].price}</p>
+        </div> */}
       
       </div>
 
     </div>
 
-
-    
   </div>
   );
 }
+
+function Card(props) {
+  return (
+    <div className='col-md-4'>
+    <img src={'img/item' + (props.i + 1) +'.jpg'} width='100%'/>
+    <h4>{props.item.title}</h4>
+    <p>{props.item.content} & {props.item.price}</p>
+  </div>
+  )
+}
+
 
 export default App;

@@ -5,29 +5,38 @@
 .Jumbotron {
   background-color: rgb(204, 228, 248);
   padding: 40px;
-  background-image: url('../public/img/front.jpg');
+  background-image: url('../public/img/frontNew.jpg');
   /* Photo by https://unsplash.com/@jordannix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jordan Nix</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
    */
   background-size: cover;
- 
+
 }
 
 .Jumbotron h1 {
   font-weight: 900;
-  color: aliceblue;
+  color: rgb(255, 174, 23);
+  -webkit-text-stroke: .3px rgb(82, 82, 82);
 }
 
 .Jumbotron p {
- margin-top: 10px;
- color: whitesmoke;
- font-weight: 600;
+  margin-top: 10px;
+  color: whitesmoke;
+  font-weight: 900;
+  -webkit-text-stroke: .3px rgb(51, 51, 51);
 }
 
 .btn-info {
-  background-color: rgb(109, 193, 196);
+  background-color: rgba(255, 176, 85, 0.658);
   color: white;
   border-color: white;
   margin-top: 20px;
+  font-weight: 600;
+}
+
+.btn-info:hover {
+  background-color: rgb(255, 225, 125);
+  border-color: white;
+  font-weight: 600;
 }
 
 .navbar-brand {
@@ -38,6 +47,47 @@
   margin: 20px auto;
 }
 
+.col-md-4 {
+  margin-bottom: 40px;
+}
+
+.col-md-4 h4 {
+  color: rgb(226, 143, 34);
+  margin-top: 10px;
+}
+
 .col-md-4 img {
   height: 500px;
+}
+
+@media (min-width:900px) {
+  .Jumbotron {
+    width: 1295px;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateX(23.5%);
+ 
+  }
+
+  .Jumbotron h1 {
+    font-size: 40pt;
+    transform: translateX(22%) translateY(50%);
+  }
+
+  .Jumbotron p {
+    font-size: 20pt;
+    width: 600px;
+    transform: translateX(95%) translateY(50%);
+
+  }
+
+
+  .btn-info {
+    width: 150px;
+    height: 50px;
+    transform: translateX(170%) translateY(150%);
+
+  }
+
 }
