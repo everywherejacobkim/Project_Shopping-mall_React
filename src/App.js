@@ -4,7 +4,7 @@ import './App.css';
 import { useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import itemArray from './data';
-import { map } from 'jquery';
+import {Link, Route, Switch} from 'react-router-dom';
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
       </Container>
     </Navbar>
 
-    <div className="Jumbotron">
+    {/* <div className="Jumbotron">
         <h1>
           50% End of Year Sale
         </h1>
@@ -43,42 +43,71 @@ function App() {
           Exclusions/terms may apply when you check out.
         </p>
         <Button variant="info">Explore</Button>{' '}
-    </div>
+    </div> */}
 
-    <div className='container'>
-      <div className='row'>
-        {
-          item.map((a,i)=>{
-            return <Card item={item[i]} i={i} key={i}/>
-          })
-        }
-
-        {/* <Card item={item[0]}/>
-        <Card item={item[1]}/>
-        <Card item={item[2]}/> */}
-        
-        {/* <div className='col-md-4'>
-          <img src='img/jacket.jpg' width='100%'/>
-          <h4>{item[0].title}</h4>
-          <p>{item[0].content} & {item[0].price}</p>
-        </div>
-
-        <div className='col-md-4'>
-          <img src='img/bomber.jpg' width='100%'/>
-          <h4>{item[1].title}</h4>
-          <p>{item[1].content} & {item[1].price}</p>
-        </div>
-
-        <div className='col-md-4'>
-          <img src='img/shoes.jpg' width='100%'/>
-          <h4>{item[2].title}</h4>
-          <p>{item[2].content} & {item[2].price}</p>
-        </div> */}
-      
+    <Route exact path="/">
+      <div className="Jumbotron">
+          <h1>
+            50% End of Year Sale
+          </h1>
+          <p>
+            Enjoy our end of year extra 50% off holiday sale. Online only.
+            Exclusions/terms may apply when you check out.
+          </p>
+          <Button variant="info">Explore</Button>{' '}
       </div>
 
-    </div>
+      <div className='container'>
+        <div className='row'>
+          {
+            item.map((a,i)=>{
+              return <Card item={item[i]} i={i} key={i}/>
+            })
+          }
 
+          {/* <Card item={item[0]}/>
+          <Card item={item[1]}/>
+          <Card item={item[2]}/> */}
+          
+          {/* <div className='col-md-4'>
+            <img src='img/jacket.jpg' width='100%'/>
+            <h4>{item[0].title}</h4>
+            <p>{item[0].content} & {item[0].price}</p>
+          </div>
+
+          <div className='col-md-4'>
+            <img src='img/bomber.jpg' width='100%'/>
+            <h4>{item[1].title}</h4>
+            <p>{item[1].content} & {item[1].price}</p>
+          </div>
+
+          <div className='col-md-4'>
+            <img src='img/shoes.jpg' width='100%'/>
+            <h4>{item[2].title}</h4>
+            <p>{item[2].content} & {item[2].price}</p>
+          </div> */}
+        
+        </div>
+      </div>
+    </Route>
+
+    <Route path="/detail">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+          </div>
+          <div className="col-md-6 mt-4">
+            <h4 className="pt-5">상품명</h4>
+            <p>상품설명</p>
+            <p>120000원</p>
+            <button className="btn btn-danger">주문하기</button> 
+          </div>
+        </div>
+      </div> 
+    </Route>
+
+    
   </div>
   );
 }
