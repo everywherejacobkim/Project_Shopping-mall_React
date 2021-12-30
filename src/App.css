@@ -9,13 +9,13 @@
   /* Photo by https://unsplash.com/@jordannix?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jordan Nix</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
    */
   background-size: cover;
-
+  margin-bottom: 30px;
 }
 
 .Jumbotron h1 {
   font-weight: 900;
-  color: rgb(255, 174, 23);
-  -webkit-text-stroke: .3px rgb(82, 82, 82);
+  color: rgb(247, 160, 29);
+  -webkit-text-stroke: .3px rgb(255, 235, 124);
 }
 
 .Jumbotron p {

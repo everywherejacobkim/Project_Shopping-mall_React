@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import styled from 'styled-components';
 import '../component/Detail.scss';
@@ -8,7 +8,17 @@ let contentBox = styled.div`
 `;
 
 function Detail(props) {
-  
+
+  let [alert, alertEdit] = useState(true);
+  let [inputData, inputDataEdit] = useState('');
+
+  // useEffect Function
+  let timer = useEffect(()=>{
+    setTimeout(()=>{alertEdit(false)}, 2000);
+    return () => {clearTimeout(timer)}
+  }, []);
+
+ 
   let {id} = useParams();
   let history = useHistory();
 
@@ -19,10 +29,22 @@ function Detail(props) {
             <div className='itemDetail'>
               <p>Detail</p>
             </div>
+
+            
+            <input onChange={(e)=>{inputDataEdit(e.target.value)}}></input>
+            {inputData}
+
+            {
+              alert === true
+              ? <div className='itemAlert'>
+                <p>Hurry up! Only 1 item LEFT..!!</p>
+                </div> 
+              : null
+            }
       
-            <div className='itemAlert'>
+            {/* <div className='itemAlert'>
               <p>Hurry up! Only 1 item LEFT..!!</p>
-            </div>    
+            </div>     */}
 
             <div className="col-md-6">
               <img src="../img/item1.jpg" width="100%" />

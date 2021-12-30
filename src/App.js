@@ -17,7 +17,7 @@ function App() {
 
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Shopping Mall by Jacob</Navbar.Brand>
+        <Navbar.Brand href="/">Shopping Mall by Jacob</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -99,7 +99,7 @@ function App() {
 function Card(props) {
   return (
     <div className='col-md-4'>
-    <img src={'img/item' + (props.i + 1) +'.jpg'} width='100%'/>
+    <a href="/detail/0"><img src={'img/item' + (props.i + 1) +'.jpg'} width='100%'/></a>
     <h4>{props.item.title}</h4>
     <p>{props.item.content} & {props.item.price}</p>
   </div>
