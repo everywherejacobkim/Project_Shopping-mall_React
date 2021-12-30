@@ -1,9 +1,26 @@
 $mainColor : rgb(231, 155, 41);
 
+img {
+    width: auto;
+    height: 500px;
+}
+
+.col-md-6 {
+    margin-top: 40px;
+}
+
+.mt-4 {
+    transform: translateY(-40px);
+}
 
 .container {
     margin-top: 0;
 }
+
+.btn {
+    margin-left: 10px;
+}
+
 .itemAlert {
     background-color: #eee;
     padding: 10px;
@@ -11,8 +28,11 @@ $mainColor : rgb(231, 155, 41);
     max-width: 500px;
     width: 100%;
     margin: auto;
+
     p {
         margin-bottom: 0;
+        color: $mainColor;
+        font-weight: 600
     }
 }
 
@@ -33,8 +53,44 @@ $mainColor : rgb(231, 155, 41);
     font-weight: 600;
     background-color: black;
     color: whitesmoke;
+
     p {
         @include margin5();
     }
 }
 
+
+@media (min-width:900px) {
+    .itemAlert {
+        position: absolute;
+        top: 27.5%;
+        left: 53%;
+    }
+
+    .mt-4 {
+        transform: translateY(10%);
+
+        p {
+            font-size: 18pt;
+        }
+    }
+
+    .pt-5 {
+        font-size: 28pt;
+        margin-bottom: 20px;
+
+    }
+
+    .btn {
+        margin-top: 70px;
+        margin-left: 10px;
+    }
+}
+
+@media (min-width:1200px) {
+    .itemAlert {
+        position: absolute;
+        top: 18%;
+        left: 53%;
+    }
+}

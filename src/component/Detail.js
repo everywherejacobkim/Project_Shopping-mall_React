@@ -25,7 +25,7 @@ function Detail(props) {
             </div>    
 
             <div className="col-md-6">
-              <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+              <img src="../img/item1.jpg" width="100%" />
             </div>
 
             <div className="col-md-6 mt-4">
