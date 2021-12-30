@@ -1,0 +1,40 @@
+$mainColor : rgb(231, 155, 41);
+
+
+.container {
+    margin-top: 0;
+}
+.itemAlert {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+// SASS Extend Grammar
+.itemAlert2 {
+    @extend .itemAlert;
+    background-color: rgb(156, 240, 229);
+}
+
+
+// SASS Mixin Grammar
+@mixin margin5 {
+    margin: 5px;
+}
+
+.itemDetail {
+    font-size: 20pt;
+    font-weight: 600;
+    background-color: black;
+    color: whitesmoke;
+    p {
+        @include margin5();
+    }
+}
+

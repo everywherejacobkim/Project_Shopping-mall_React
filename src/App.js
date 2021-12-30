@@ -22,7 +22,7 @@ function App() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/detail">Detail</Nav.Link>
+            <Nav.Link href="/detail/0">Detail</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -82,8 +82,8 @@ function App() {
       </div>
     </Route>
 
-    <Route path="/detail">
-      <Detail />
+    <Route path="/detail/:id">
+      <Detail item = {item}/>
     </Route>
 
     <Route path="/:id">
