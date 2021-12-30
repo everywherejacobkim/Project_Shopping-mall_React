@@ -55,15 +55,26 @@ function Detail(props) {
               <p>{props.item[id].content}</p>
               <p>{props.item[id].price}</p>
 
+              <Info stock = {props.stock}></Info>
+
               <button className="btn backBtn" onClick={()=>{
                   history.goBack();
                 }}>Back</button> 
 
-              <button className="btn btn-danger">Check-out</button>             
+              <button className="btn btn-danger" onClick={()=>{
+                props.stockEdit([9,11,12])
+              }}>Check-out</button>             
             </div>
           </div>
         </div> 
     )
   }
+
+  function Info(props){
+    return (
+      <p>Stock: {props.stock[0]}</p>
+    );
+  }
+
 
   export default Detail;
