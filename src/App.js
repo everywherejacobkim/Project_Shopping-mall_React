@@ -6,6 +6,7 @@ import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import itemArray from './component/data';
 import {Link, Route, Switch} from 'react-router-dom';
 import Detail from './component/Detail';
+import axios from 'axios';
 
 function App() {
 
@@ -79,6 +80,21 @@ function App() {
           </div> */}
         
         </div>
+
+          <button className='btn btnMore' onClick={()=>{
+
+            axios.get('https://codingapple1.github.io/shop/data2.json')
+            .then((result)=>{ 
+
+              console.log(result.data);
+              itemEdit([...item, ...result.data]);
+             })
+            .catch(()=>{
+              console.log('404 Error');
+            })
+          }}>More</button>
+
+
       </div>
     </Route>
 
@@ -91,6 +107,8 @@ function App() {
     </Route>    
     
 </Switch>
+
+
 
   </div>
   );

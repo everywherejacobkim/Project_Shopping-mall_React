@@ -67,6 +67,13 @@
   border-color: white;
 }
 
+.btnMore {
+  background-color: rgb(252, 181, 50);
+  margin-bottom: 40px;
+  width: 100px;
+  font-weight: 600;
+}
+
 
 @media (min-width:900px) {
   .Jumbotron {
