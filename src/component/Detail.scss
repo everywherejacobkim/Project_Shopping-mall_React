@@ -36,6 +36,18 @@ img {
     }
 }
 
+.wow-enter {
+    opacity: 0;
+}
+
+.wow-enter-active {
+    opacity: 1;
+    transition: all 1000ms;
+    color: blue;
+}
+
+
+
 // SASS Extend Grammar
 .itemAlert2 {
     @extend .itemAlert;

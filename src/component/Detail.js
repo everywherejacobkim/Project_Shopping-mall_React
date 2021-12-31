@@ -1,7 +1,9 @@
 import React, {useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../component/Detail.scss';
+import {CSSTransition} from "react-transition-group";
 
 let contentBox = styled.div`
   padding:20px;
@@ -11,6 +13,8 @@ function Detail(props) {
 
   let [alert, alertEdit] = useState(true);
   let [inputData, inputDataEdit] = useState('');
+  let [tab, tabEdit] = useState(0);
+  let [switchOn, switchOnEdit] = useState(false);
 
   // useEffect Function
   let timer = useEffect(()=>{
@@ -66,8 +70,40 @@ function Detail(props) {
               }}>Check-out</button>             
             </div>
           </div>
+
+          {/* Create Tab in Detail-page */}
+          <Nav className='mt-5' variant="tabs" defaultActiveKey="link-0">
+            <Nav.Item>
+              <Nav.Link eventKey="link-0" onClick={()=>{
+                switchOnEdit(false); tabEdit(0)
+              }}>Detail</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="link-1" onClick={()=>{
+               switchOnEdit(false); tabEdit(1)
+              }}>Delivery</Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+        <CSSTransition in={switchOn} classNames="wow" timeout={500}>
+          <TabContent tab={tab} switchOnEdit={switchOnEdit}/>   
+        </CSSTransition>
+
+
         </div> 
     )
+  }
+
+  function TabContent(props){
+    useEffect(()=>{
+      props.switchOnEdit(true);
+    })
+
+    if (props.tab === 0) {
+      return <div>Item Description</div>
+    } else if (props.tab === 1) {
+      return <div>Delivery Options</div>
+    } 
   }
 
   function Info(props){
