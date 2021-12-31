@@ -49,6 +49,7 @@
 
 .col-md-4 {
   margin-bottom: 40px;
+ 
 }
 
 .col-md-4 h4 {
@@ -81,8 +82,8 @@
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
-    transform: translateX(23.5%);
- 
+    /* transform: translateX(23.5%); */
+    margin: 20px auto;
   }
 
   .Jumbotron h1 {
@@ -108,4 +109,12 @@
     transform: translateX(380%);
   }
 
+  .row {
+    flex-wrap: nowrap;
+  }
+
+  .col-md-4 {
+    margin-right: 20px;
+    transform: translateX(-18px);
+  }
 }

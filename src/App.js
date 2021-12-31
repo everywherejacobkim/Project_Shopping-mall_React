@@ -7,6 +7,7 @@ import itemArray from './component/data';
 import {Link, Route, Switch} from 'react-router-dom';
 import Detail from './component/Detail';
 import axios from 'axios';
+import Cart from './component/Cart';
 
 function App() {
 
@@ -24,13 +25,13 @@ function App() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/detail/0">Detail</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -100,6 +101,11 @@ function App() {
 
     <Route path="/detail/:id">
       <Detail item={item} stock={stock} stockEdit={stockEdit}/>
+    </Route>
+
+    <Route path="/cart">
+       <Cart></Cart>   
+
     </Route>
 
     <Route path="/:id">
