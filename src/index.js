@@ -9,12 +9,38 @@ import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import { createStore } from 'redux';
 
-let store = createStore(()=>{
-  return [
-    {id:0, name:'Black Jacket', quantity: 1, price: '$120'},
-    {id:1, name:'Cool Shoes', quantity: 2, price: '$60'} 
-  ]
-});
+
+/*** Redux data ***/
+// let store = createStore(()=>{
+//   return [
+//     {id:0, name:'Black Jacket', quantity: 1, price: '$120'},
+//     {id:1, name:'Cool Shoes', quantity: 2, price: '$60'} 
+//   ]
+// });
+
+/*** Redux data modify method ***/
+let cartState = [
+  {id:0, name:'Black Jacket', quantity: 1, price: '$120'},
+  {id:1, name:'Cool Shoes', quantity: 2, price: '$60'} 
+]
+function reducer(state=cartState, modify){
+  if (modify.type === 'addNum'){
+    let copyState = [...state];
+    copyState[0].quantity++;
+    return copyState
+  } else if(modify.type === 'deductNum'){
+    let copyState2 = [...state];
+    copyState2[0].quantity--;
+    return copyState2
+  } else {
+    return state
+  }
+}
+
+let store = createStore(reducer);
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -55,6 +55,14 @@ img {
     color: black;
 }
 
+td {
+    button {
+        width: 25px;
+        margin-left: 5px;
+        border-radius: 5px;
+        background-color: rgb(241, 241, 241)
+    }
+}
 
 // SASS Extend Grammar
 .itemAlert2 {
