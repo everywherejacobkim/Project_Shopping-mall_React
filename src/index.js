@@ -25,7 +25,11 @@ let cartState = [
   {id:1, name:'Brownie Canvas', quantity: 2, price: '$60'} 
 ]
 function reducer(state=cartState, modify){
-  if (modify.type === 'addNum'){
+  if(modify.type === 'addItem') {
+    let copy = [...state];
+    copy.push(modify.payload);
+    return copy
+  } else if (modify.type === 'addNum'){
     let copyState = [...state];
     copyState[0].quantity++;
     return copyState

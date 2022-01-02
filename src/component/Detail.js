@@ -4,6 +4,7 @@ import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../component/Detail.scss';
 import {CSSTransition} from "react-transition-group";
+import { connect } from "react-redux";
 
 let contentBox = styled.div`
   padding:20px;
@@ -66,11 +67,14 @@ function Detail(props) {
                 }}>Back</button> 
 
               <button className="btn btn-danger" onClick={()=>{
-                props.stockEdit([9,11,12])
-                
-              }}><a href="/cart" className='checkOutBtn'>Check-out</a></button>             
+                props.stockEdit([9,11,12]);
+                props.dispatch({type: 'addItem', payload: {id:2, name:'New Item', quantity: 1, price: '$100'}});
+                history.push('/cart');
+              }}><a className='checkOutBtn'>Check-out</a></button>             
             </div>
           </div>
+
+
 
           {/* Create Tab in Detail-page */}
           <Nav className='mt-5' variant="tabs" defaultActiveKey="link-0">
@@ -114,4 +118,13 @@ function Detail(props) {
   }
 
 
-  export default Detail;
+
+  function stateProps(state){
+    return {
+        state : state.reducer,
+        alertOpen : state.reducer2
+    }
+}
+
+export default connect(stateProps)(Detail)
+// export default Detail;

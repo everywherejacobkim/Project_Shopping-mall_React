@@ -64,6 +64,13 @@ td {
     }
 }
 
+.closeBtn {
+    margin-top: 8px;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: rgb(59, 59, 59);
+}
+
 // SASS Extend Grammar
 .itemAlert2 {
     @extend .itemAlert;

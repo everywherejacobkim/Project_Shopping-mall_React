@@ -51,7 +51,7 @@ function Cart(props) {
                 {props.alertOpen === true
                 ? ( <div className="itemAlert">
                     <p>Purchase Today & Enjoy Extra 20% OFF!</p>
-                    <button onClick={()=>{ props.dispatch({type: 'closeModal'}) }}>Close</button>
+                    <button className="closeBtn" onClick={()=>{ props.dispatch({type: 'closeModal'}) }}>Close</button>
                     </div>)   
                 : null
                 }
