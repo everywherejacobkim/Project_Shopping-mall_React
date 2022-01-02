@@ -10,7 +10,10 @@ import {Provider} from 'react-redux';
 import { createStore } from 'redux';
 
 let store = createStore(()=>{
-  return [{id:0, name:'Cool Shoes', quantity: 2, price: '$120'}]
+  return [
+    {id:0, name:'Black Jacket', quantity: 1, price: '$120'},
+    {id:1, name:'Cool Shoes', quantity: 2, price: '$60'} 
+  ]
 });
 
 ReactDOM.render(

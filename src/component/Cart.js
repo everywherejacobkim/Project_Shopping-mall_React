@@ -14,13 +14,27 @@ function Cart(props) {
                     <th>Price</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
+                {
+                    props.state.map((a, i)=>{
+                        return (
+                            <tr key={i}>
+                                <td>{a.id}</td>
+                                <td>{a.name}</td>
+                                <td>{a.quantity}</td>
+                                <td>{a.price}</td>
+                            </tr>
+                        )
+                    })
+                }
+
+                    {/* <tr>
                     <td>1</td>
                     <td>{props.state[0].name}</td>
                     <td>{props.state[0].quantity}</td>
                     <td>{props.state[0].price}</td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </Table>
         </div>
