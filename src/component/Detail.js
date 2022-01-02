@@ -68,7 +68,7 @@ function Detail(props) {
               <button className="btn btn-danger" onClick={()=>{
                 props.stockEdit([9,11,12])
                 
-              }}>Check-out</button>             
+              }}><a href="/cart" className='checkOutBtn'>Check-out</a></button>             
             </div>
           </div>
 
