@@ -18,7 +18,7 @@ function Cart(props) {
 
                 <tbody>
                 {
-                    props.state.map((a, i )=>{
+                    props.state.map((a, i)=>{
                         return (
                             <tr key={i}>
                                 <td>{a.id}</td>
@@ -48,13 +48,22 @@ function Cart(props) {
                     </tr> */}
                 </tbody>
             </Table>
+                {props.alertOpen === true
+                ? ( <div className="itemAlert">
+                    <p>Purchase Today & Enjoy Extra 20% OFF!</p>
+                    <button onClick={()=>{ props.dispatch({type: 'closeModal'}) }}>Close</button>
+                    </div>)   
+                : null
+                }
+
         </div>
     )
 }
 
 function stateProps(state){
     return {
-        state : state
+        state : state.reducer,
+        alertOpen : state.reducer2
     }
 }
 

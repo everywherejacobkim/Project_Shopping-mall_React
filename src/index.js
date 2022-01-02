@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 
 import {Provider} from 'react-redux';
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
 
 /*** Redux data ***/
@@ -18,10 +18,11 @@ import { createStore } from 'redux';
 //   ]
 // });
 
+
 /*** Redux data modify method ***/
 let cartState = [
   {id:0, name:'Black Jacket', quantity: 1, price: '$120'},
-  {id:1, name:'Cool Shoes', quantity: 2, price: '$60'} 
+  {id:1, name:'Brownie Canvas', quantity: 2, price: '$60'} 
 ]
 function reducer(state=cartState, modify){
   if (modify.type === 'addNum'){
@@ -37,8 +38,18 @@ function reducer(state=cartState, modify){
   }
 }
 
-let store = createStore(reducer);
+// Cart Page Modal //
+let alertDefault = true;
+function reducer2(state=alertDefault, modify){
+  if(modify.type === 'closeModal'){
+    state = false;
+    return state;
+  } else {
+    return state
+  }
+}
 
+let store = createStore(combineReducers({reducer, reducer2}));
 
 
 
