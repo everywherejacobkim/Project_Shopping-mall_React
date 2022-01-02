@@ -1,8 +1,14 @@
 import React from "react";
 import {Table} from "react-bootstrap";
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 function Cart(props) {
+
+    let state = useSelector((state) => state.reducer)
+    console.log(state);
+
+    let dispatch = useDispatch();
+
     return (
         <div>
             <Table striped bordered hover>
@@ -18,7 +24,7 @@ function Cart(props) {
 
                 <tbody>
                 {
-                    props.state.map((a, i)=>{
+                    state.map((a, i)=>{
                         return (
                             <tr key={i}>
                                 <td>{a.id}</td>
@@ -27,11 +33,11 @@ function Cart(props) {
                                 <td>{a.quantity}</td>
                                 <td>
                                     <button onClick={()=>{
-                                         props.dispatch({type: 'addNum'})  
+                                         dispatch({type: 'addNum'})  
                                     }}><b>+</b></button>
 
                                     <button onClick={()=>{
-                                         props.dispatch({type: 'deductNum'})  
+                                         dispatch({type: 'deductNum'})  
                                     }}><b>-</b></button>
                                 </td>
                                 
@@ -60,12 +66,15 @@ function Cart(props) {
     )
 }
 
-function stateProps(state){
-    return {
-        state : state.reducer,
-        alertOpen : state.reducer2
-    }
-}
 
-export default connect(stateProps)(Cart)
-// export default Cart;
+
+// function stateProps(state){
+//     return {
+//         state : state.reducer,
+//         alertOpen : state.reducer2
+//     }
+// }
+
+// export default connect(stateProps)(Cart)
+
+export default Cart;
