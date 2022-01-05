@@ -120,7 +120,7 @@ function Card(props) {
 
   return (
     <div className='col-md-4' onClick={()=>{history.push('/detail/' + props.i)}}>
-    <a href="/detail/0"><img src={'img/item' + (props.i + 1) +'.jpg'} width='100%'/></a>
+    <img src={'img/item' + (props.i + 1) +'.jpg'} width='100%'/>
     <h4>{props.item.title}</h4>
     <p>{props.item.content} & {props.item.price}</p>
   </div>
