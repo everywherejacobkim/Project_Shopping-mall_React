@@ -4,7 +4,7 @@ import './App.css';
 import React, { useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import itemArray from './component/data';
-import {Link, Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch, useHistory} from 'react-router-dom';
 import Detail from './component/Detail';
 import axios from 'axios';
 import Cart from './component/Cart';
@@ -115,8 +115,11 @@ function App() {
 }
 
 function Card(props) {
+
+  let history = useHistory();
+
   return (
-    <div className='col-md-4'>
+    <div className='col-md-4' onClick={()=>{history.push('/detail/' + props.i)}}>
     <a href="/detail/0"><img src={'img/item' + (props.i + 1) +'.jpg'} width='100%'/></a>
     <h4>{props.item.title}</h4>
     <p>{props.item.content} & {props.item.price}</p>

@@ -20,6 +20,7 @@ let itemArray = [
           content : "Made in Canada",
           price : "$60"
         }
+
       
 ]
 
